@@ -1,0 +1,29 @@
+{
+  "kind": "collectionType",
+  "collectionName": "tags",
+  "info": {
+    "singularName": "tag",
+    "pluralName": "tags",
+    "displayName": "Tag"
+  },
+  "options": {
+    "draftAndPublish": false
+  },
+  "pluginOptions": {},
+  "attributes": {
+    "name": {
+      "type": "string",
+      "required": true
+    },
+    "identifier": {
+      "type": "integer",
+      "unique": true
+    },
+    "donation": {
+      "type": "relation",
+      "relation": "oneToOne",
+      "target": "api::donation.donation",
+      "inversedBy": "tag"
+    }
+  }
+}
